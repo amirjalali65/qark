@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 '''Copyright 2015 LinkedIn Corp. Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
  You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
  
@@ -6,8 +5,10 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS, 
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.'''
 
-
 import os, platform
+import sys
+sys.path.append(os.path.abspath('../'))
+sys.path.append(os.path.abspath('../modules'))
 import urllib2
 import sys
 import zipfile
@@ -201,3 +202,8 @@ def build_apk(path):
     p1 = Popen(['./gradlew',"assembleDebug"], stdout=PIPE, stdin=PIPE, stderr=STDOUT, bufsize=1)
     for line in iter(p1.stdout.readline, b''):
         print line,
+
+
+if __name__ == '__main__':
+    common.rootDir = os.path.dirname(os.path.realpath(__file__)) + '/..'
+    download_sdk()
