@@ -23,7 +23,7 @@ import subprocess
 from xml.dom import minidom
 from modules.IssueType import IssueType, IssueSeverity
 from lib import colorama
-from lib.blessed import *
+from lib.blessed import Terminal
 from modules.createExploit import ExploitType
 
 
@@ -61,6 +61,7 @@ rootDir = ""
 reportDir = ""
 interactive_mode = True
 source_or_apk = 1
+buildLocation = ""
 exploitLocation = ""
 apkPathChoice = 0
 apkList = []
