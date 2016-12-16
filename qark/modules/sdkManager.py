@@ -205,5 +205,6 @@ def build_apk(path):
 
 
 if __name__ == '__main__':
-    common.rootDir = os.path.dirname(os.path.realpath(__file__)) + '/..'
+    common.rootDir = os.path.normpath(os.path.dirname(os.path.realpath(__file__)) + '/..')
     download_sdk()
+    print("Done like a dinner")
