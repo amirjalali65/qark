@@ -159,7 +159,7 @@ def decompile(path):
 	if not common.runningAutomated:
 		with common.term.cbreak():
 			val = None
-			while val not in (u'c', u'C'):
+			while val not in (u'c', u'C') and thread1.is_alive() and thread2.is_alive() and thread3.is_alive():
 				with common.term.location(0,common.term.height-3):
 					print "Decompilation may hang/take too long (usually happens when the source is obfuscated)."
 					print "At any time," + common.term.bold_underline_red_on_white('Press C to continue') + " and QARK will attempt to run SCA on whatever was decompiled."
